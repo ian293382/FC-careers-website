@@ -16,15 +16,20 @@
       height:360px;
       width: 100%;
       object-fit:cover;
+      margin-bottom: 16px;
     }
   </style>
 <body>
+  {% include 'nav.html'%}
+     <img class="img-fluid" id="banner" src="static/ginkela.jpeg" > 
   <div class="container">
     <h1 class="text-center mt-2 mb-4">{{company_name}} Careers</h1>
-    <img class="img-fluid" id="banner" src="static/ginkela.jpeg" > 
-    <h2 class="text-center mt-2 mb-4"> About Jovian</h2>
+  <div class="row" style="margin-bottom:16px;s">
+    <div class="col-md-6">
     <p class="lead">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-  
+    </div>
+        <img src="/static/working-together.jpeg" class="d-none d-md-block col-md-6" style="height:300px; border-radius:4px;  object-fit:cover;">
+  </div>
     <h2 class="text-center mt-2 mb-4">
       Job Opening
     </h2>
@@ -34,10 +39,10 @@
       {% endfor %}
     </div>
     <div class="text-center">
-     <button class="btn btn-primary btn-lg">Contact Us</button>
-      <p class="mt-4">Copyright 2022, Jovian</p>
+    <a href="mailto:hello@jovian.ai?subject=Question%20about%20Job%20Openings&body=My%20name%3A%20%3Cyour%20name%20here%3E%0D%0A%0D%0AMy%20Question%3A%20%3Center%20question%20here%3E" type="button" class="btn btn-primary btn-lg">Contact Us</a>
     </div>
   </div>
+  {% include 'footer.html' %}
 </body>
 
 </html>
