@@ -1,7 +1,15 @@
 from sqlalchemy import create_engine, text
 
+from dotenv import load_dotenv
+load_dotenv()
+import os
+
+
+
 # "mysql+pymysql://2yze6advjx083prsxef1:pscale_pw_HzDUxzP5anqUVPhPQyhC5bvN0OIGnl16iyEwfRlNTSc@gcp.connect.psdb.cloud/joviancareers?charset=utf8mb4"
-db_connection_string = "mysql+pymysql://zbc024f8fu7wv0i4ea40:pscale_pw_pBslINK2d529o27QJFvWrX12JauRTbnTE0mbck4Qle8@gcp.connect.psdb.cloud/joviancareers?charset=utf8mb4"
+
+
+db_connection_string = os.environ['DB_CONNECTION_STR']
 
 engine = create_engine(
   db_connection_string,
