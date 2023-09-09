@@ -1,6 +1,4 @@
 Flask
 Gunicorn
-
-planetscale
 sqlalchemy
 pymysql
