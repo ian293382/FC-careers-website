@@ -5,12 +5,13 @@ import os
 
 # "mysql+pymysql://2yze6advjx083prsxef1:pscale_pw_HzDUxzP5anqUVPhPQyhC5bvN0OIGnl16iyEwfRlNTSc@gcp.connect.psdb.cloud/joviancareers?charset=utf8mb4"
 
+# 由於render免費沒辦法將自己ssl上傳上去當作使用 將取消ssl cert 客戶端加密連線
 db_connection_string = os.environ['DB_CONNECTION_STR']
 ssl_args = {'ssl_ca': "/etc/ssl/cert.pem"}
 
 engine = create_engine(
     db_connection_string,
-    connect_args=ssl_args)
+    connect_args={'ssl_disabled': True})
 
 
 def load_jobs_from_db():
