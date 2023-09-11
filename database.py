@@ -11,7 +11,7 @@ ssl_args = {'ssl_ca': "/etc/ssl/cert.pem"}
 
 engine = create_engine(
     db_connection_string,
-    connect_args={'ssl_disabled': True})
+    connect_args=ssl_args)
 
 
 def load_jobs_from_db():
