@@ -12,6 +12,7 @@ engine = create_engine(
     db_connection_string,
     connect_args=ssl_args)
 
+
 def load_jobs_from_db():
     with engine.connect() as connection:
       result = connection.execute(text("select * from jobs"))
