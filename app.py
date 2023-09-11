@@ -16,10 +16,10 @@ def list_jobs():
   jobs = load_jobs_from_db()
   return jsonify(jobs)
 
-# @app.route("/api/job/<id>")
-# def show_job_json(id):
-#   job = load_job_from_db(id)
-#   return jsonify(job)
+@app.route("/api/job/<id>")
+def show_job_json(id):
+  job = load_job_from_db(id)
+  return jsonify(job)
 
 @app.route("/job/<id>")
 def show_job(id):
