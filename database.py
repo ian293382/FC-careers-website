@@ -6,15 +6,11 @@ import os
 # "mysql+pymysql://2yze6advjx083prsxef1:pscale_pw_HzDUxzP5anqUVPhPQyhC5bvN0OIGnl16iyEwfRlNTSc@gcp.connect.psdb.cloud/joviancareers?charset=utf8mb4"
 
 db_connection_string = os.environ['DB_CONNECTION_STR']
+ssl_args = {'ssl_ca': "/etc/ssl/cert.pem"}
 
 engine = create_engine(
     db_connection_string,
-    connect_args={
-    "ssl": {
-            "ca": "/etc/ssl/cert.pem",
-        }
-
-    })
+    connect_args=ssl_args)
 
 def load_jobs_from_db():
     with engine.connect() as connection:
